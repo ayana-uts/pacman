@@ -4,40 +4,57 @@ using UnityEngine;
 
 public class PacStudentAudio : MonoBehaviour
 {
-    // 1つのAudioSourceを使う
-    public AudioSource audioSource;
+    // Audio Sourceのフィールドを宣言します
+    public AudioSource moveSound;       // PacStudentが移動中に再生される効果音
+    public AudioSource pelletEatenSound; // ペレットを食べた時の効果音
+    public AudioSource wallHitSound;    // 壁にぶつかった時の効果音
 
-    // 複数のAudioClipを登録
-    public AudioClip coinPickupSound;  // ペレットを食べたときの音
-    public AudioClip gameOverSound;   // ゴーストにぶつかったときの音
+    private Rigidbody2D rb;             // PacStudentの移動に使うRigidbody2D
+    public float moveSpeed = 5f;        // PacStudentの移動速度
 
-    // 衝突イベントで効果音を切り替える
-    void OnTriggerEnter(Collider other)
-    {
-        // ペレットに触れたら
-        if (other.CompareTag("Pellet"))
-        {
-            audioSource.clip = coinPickupSound;  // ペレットの音を設定
-            audioSource.Play();  // 効果音を再生
-            Destroy(other.gameObject);  // ペレットを削除
-        }
-        // ゴーストに触れたら
-        else if (other.CompareTag("Ghost"))
-        {
-            audioSource.clip = gameOverSound;  // ゲームオーバーの音を設定
-            audioSource.Play();  // 効果音を再生
-            // ゲームオーバー処理
-        }
-    }
-    // Start is called before the first frame update
     void Start()
     {
-        
+        // Rigidbody2Dを取得
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // プレイヤーの入力に基づいて移動方向を決定
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+
+        // PacStudentの移動
+        Vector2 movement = new Vector2(moveX, moveY).normalized;
+        rb.velocity = movement * moveSpeed;
+
+        // PacStudentが移動しているかどうかを確認し、効果音を再生
+        if (movement.magnitude > 0)
+        {
+            if (!moveSound.isPlaying)
+            {
+                moveSound.Play();
+            }
+        }
+        else
+        {
+            moveSound.Stop(); // 停止時に移動音を停止
+        }
+    }
+
+    // 衝突時のイベントハンドラ
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Pellet")
+        {
+            // ペレットを食べた時の効果音を再生
+            pelletEatenSound.Play();
+            Destroy(collision.gameObject); // ペレットを消去
+        }
+        else if (collision.gameObject.tag == "Wall")
+        {
+            // 壁にぶつかった時の効果音を再生
+            wallHitSound.Play();
+        }
     }
 }
