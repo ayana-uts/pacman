@@ -12,6 +12,10 @@ public class PacStudentAudio : MonoBehaviour
     private Rigidbody2D rb;             // PacStudentの移動に使うRigidbody2D
     public float moveSpeed = 5f;        // PacStudentの移動速度
 
+    public Animator animator; // Animatorコンポーネントの参照
+
+   
+
     void Start()
     {
         // Rigidbody2Dを取得
@@ -23,6 +27,12 @@ public class PacStudentAudio : MonoBehaviour
         // プレイヤーの入力に基づいて移動方向を決定
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
+
+    
+
+        // Animatorのパラメータに入力値を設定
+        animator.SetFloat("Horizontal", moveX);
+        animator.SetFloat("Vertical", moveY);
 
         // PacStudentの移動
         Vector2 movement = new Vector2(moveX, moveY).normalized;
