@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b0947e65ca9ee4dbdb1d301f51c44b5b
+guid: eb27b1231daed455b93849206894f384
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1590347831010348559
-    second: Wall_TJunction_0
+      213: -251658448259854040
+    second: Wall_T_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wall_TJunction_0
+      name: Wall_T_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 11
-        width: 10
-        height: 13
+        x: 27
+        y: 0
+        width: 101
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f0e4fa02dec021610800000000000000
-      internalID: 1590347831010348559
+      spriteID: 821deb289fde18cf0800000000000000
+      internalID: -251658448259854040
       vertices: []
       indices: 
       edges: []

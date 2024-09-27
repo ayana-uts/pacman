@@ -103,10 +103,10 @@ TextureImporter:
       name: Wall_InsideCorner_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 14
-        width: 8
-        height: 8
+        x: 0
+        y: 0
+        width: 77
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

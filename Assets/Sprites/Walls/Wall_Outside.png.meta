@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 1f8b4dae08f67494c86231bf1568b17e
+guid: 639f3faae634c4e7a955790f8b12354c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 240101778839731154
-    second: Wall_Small_InsideWall_0
+      213: -6653261678412453831
+    second: Wall_Outside_0
+  - first:
+      213: -6207073306958139545
+    second: Wall_Outside_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wall_Small_InsideWall_0
+      name: Wall_Outside_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 32
+        y: 79
+        width: 128
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +117,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2db7ea5bb43055300800000000000000
-      internalID: 240101778839731154
+      spriteID: 938a18401cddaa3a0800000000000000
+      internalID: -6653261678412453831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_Outside_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 128
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f63fbb6bb0cd9a0800000000000000
+      internalID: -6207073306958139545
       vertices: []
       indices: 
       edges: []

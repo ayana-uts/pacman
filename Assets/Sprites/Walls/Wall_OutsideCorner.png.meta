@@ -103,10 +103,10 @@ TextureImporter:
       name: Wall_OutsideCorner_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 10
-        width: 15
-        height: 16
+        x: 23
+        y: 0
+        width: 105
+        height: 109
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
